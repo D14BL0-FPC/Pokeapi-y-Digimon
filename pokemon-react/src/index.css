@@ -1,0 +1,185 @@
+/* -----------------------------
+   ESTILO GENERAL - POKEDEX DIGITAL
+------------------------------ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #111; /* Fondo negro */
+  font-family: "Orbitron", sans-serif; /* Fuente futurista */
+  color: #e2e2e2;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 100px auto 40px auto;
+  padding: 0 20px;
+}
+
+/* -----------------------------
+   NAVBAR - ESTILO POKEDEX
+------------------------------ */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #b30000; /* Rojo intenso */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  border-bottom: 4px solid #ffcc00; /* Línea amarilla tipo pokedex */
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.navbar-logo {
+  color: #ffea00;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 0 5px #000;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffea00;
+  text-shadow: 0 0 8px #ffea00;
+}
+
+.nav-link.active {
+  color: #ffea00;
+  border-bottom: 3px solid #ffea00;
+}
+
+/* -----------------------------
+   TITULOS
+------------------------------ */
+.page-title {
+  color: #ff3434;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 0px 0px 10px rgba(255, 50, 50, 0.7);
+}
+
+/* -----------------------------
+   GRID DE CARDS
+------------------------------ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+/* -----------------------------
+   TARJETAS - ESTILO DE PANTALLA DIGITAL
+------------------------------ */
+.card {
+  background: rgba(20, 20, 20, 0.9);
+  border: 2px solid #ff3c3c;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.3);
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  bottom: -4px;
+  left: -4px;
+  border: 2px dashed #ffcc00;
+  border-radius: 20px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.6);
+}
+
+/* Imagen del Pokémon */
+.card-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px #ff3c3c);
+  margin-bottom: 10px;
+}
+
+.card-title {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  color: #ffea00;
+  text-shadow: 0 0 5px black;
+}
+
+.card-text {
+  color: #ffaeae;
+  margin: 15px 0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.stats span {
+  background: #ff000020;
+  border: 1px solid #ff4c4c;
+  border-radius: 8px;
+  padding: 6px;
+  font-size: 0.9rem;
+}
+
+/* -----------------------------
+   MENSAJES Y ERRORES
+------------------------------ */
+.message {
+  text-align: center;
+  color: #ffcc00;
+  font-size: 1.2rem;
+}
+
+.error-container,
+.not-found {
+  text-align: center;
+  color: #ff6b6b;
+}
+
+.error-image {
+  max-width: 350px;
+  width: 100%;
+  margin-top: 20px;
+  filter: drop-shadow(0 0 12px rgba(255, 0, 0, 0.7));
+}
+
+.not-found h2 {
+  font-size: 2rem;
+  color: #ff3c3c;
+  margin-bottom: 10px;
+}
